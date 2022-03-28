@@ -1,0 +1,42 @@
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+<p-toast></p-toast>
+<h1>Author</h1>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>ID</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Email</th>
+            <th><button type="button" class="btn btn-info">Add New</button></th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of authors;let i = index">
+            <td scope="row">{{i}}</td>
+            <td>{{s.authorId}}</td>
+            <td>{{s.lastName}}</td>
+            <td>{{s.firstName}}</td>
+            <td>{{s.phone}}</td>
+            <td>{{s.address}}</td>
+            <td>{{s.city}}</td>
+            <td>{{s.state}}</td>
+            <td>{{s.zip}}</td>
+            <td>{{s.emailAddress}}</td>
+            <td>
+            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning mr-2" (click)="confirm2(s.authorId)"></button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
